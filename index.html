@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+     <title>Ejercicio 5.5.10</title>
+     <style type="text/css" media="screen">
+     body{
+       margin-left:2em;
+       margin-top:2em;
+     }
+     h4{
+      font-style: oblique;
+      color: #162148;
+      margin-left: auto;
+     }
+     h5{
+       color: grey;
+       margin-left: 3.5em;
+     }
+     a{
+       padding:.5em;
+       margin-right: 0.5em;
+       border: outset #0B7A7E;
+       background-color: aquamarine;
+       text-decoration: none;
+     }
+     div#calculadora{
+       margin-left: 2.5em;
+     }
+
+     div#display {
+      padding: 0.5em;
+      border: inset #142583;
+      width: 9.5em;
+      height: 1em;
+     }
+      </style>
+
+     <script type="text/javascript" charset="utf-8">
+      var valor1;
+      var valor2;
+      function cero(){
+        var display = document.getElementById('display');
+        display.innerHTML= "0";
+      }
+      function uno(){
+        var display = document.getElementById('display');
+        display.innerHTML= "1";
+      }
+      function suma(){
+        var display = document.getElementById('display');
+        valor1 = display.innerHTML;
+        document.getElementById('display').innerHTML ="";
+      }
+      function igual(){
+        valor2 =  document.getElementById('display').innerHTML;
+        resultado = parseInt(valor1) + parseInt(valor2); // sumamos en enteros
+        if (resultado == 2 ){ // cuando es 2 -- es 1 + 1 = 0 en binario
+            document.getElementById('display').innerHTML = 0;
+        }else{
+          document.getElementById('display').innerHTML = resultado.toString(2); // pasamos a binario
+
+        }
+
+      }
+      </script>
+      <h4> Calculadora Binaria Simple </h4>
+      <h5> (usando JavaScript) </h5>
+   </head>
+   <body>
+     <div id = "calculadora">
+         <div id ="display"> </div>
+         <p><a href = "javascript:uno()"> 1 </a><a href = "javascript:cero()"> 0 </a>
+         <a href = "javascript:suma()"> + </a><a href = "javascript:igual()"> = </a></p>
+      </div>
+   </body>
+  </html>
